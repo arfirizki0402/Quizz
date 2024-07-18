@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('IMG_2852.jpeg'); /* Ganti dengan path gambar latar belakang Anda */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .results {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #2575fc;
+        }
+        .answers {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .answers h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .answers ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .answers ul li {
+            margin-bottom: 10px;
+        }
+        .btn-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .btn-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #2575fc;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-container button:hover {
+            background-color: #1a5bbf;
+        }
+    </style>
+</head>
+<body>
+    <div class="results">
+        <h2>Hasil</h2>
+        <h3>SS Halaman Ini Dan Kirim Kepada Kreator Untuk Mendapatkan Nilai</h3>
+        <div class="answers">
+            <h3 id="usernameAnswers"></h3>
+            <ul id="answersList"></ul>
+        </div>
+        <div class="btn-container">
+        </div>
+    </div>
+
+    <script>
+        function returnToQuiz() {
+            const username = localStorage.getItem('username');
+            localStorage.removeItem(username + '_quizLeft');
+            window.location.href = 'quiz.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const username = localStorage.getItem('username');
+            const usernameAnswers = document.getElementById('usernameAnswers');
+            usernameAnswers.textContent = `${username}'s Answers:`;
+
+            const answersList = document.getElementById('answersList');
+            const storedAnswers = JSON.parse(localStorage.getItem('quizAnswers'));
+            if (storedAnswers) {
+                storedAnswers.forEach((answer, index) => {
+                    const li = document.createElement('li');
+                    li.textContent = `Question ${index + 1}: ${answer}`;
+                    answersList.appendChild(li);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

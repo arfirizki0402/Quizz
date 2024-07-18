@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('801B16C6-6E8D-470B-B04F-DF8008626DB1.gif');
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba ( 0, 0, 0, 0.5);
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+        }
+        h2 {
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4x rgba(0, 0, 0, 0.5);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            text-align: left;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        select, input[type="password"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #2575fc;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #1a5bbf;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Pilih ID Dan Masukan Kode Unik Sesuai Yang Di Berikan</h2>
+        <form id="loginForm">
+            <label for="username">ID:</label>
+            <select id="username" name="username">
+                <option value="Adnan">Adnan</option>
+                <option value="Jovan">Jovan</option>
+                <option value="Farzan">Farzan</option>
+                <option value="Aldi">Aldi</option>
+                <option value="Farhan">Farhan</option>
+                <option value="Raihan">Raihan</option>
+                <option value="Opal">Opal</option>
+                <option value="Uta">Uta</option>
+                <option value="Apik">Apik</option>
+                <option value="Acuy">Acuy</option>
+                <option value="Development">Development</option>
+            </select>
+            <br>
+            <label for="password">Kode Unik:</label>
+            <input type="password" id="password" name="password">
+            <br>
+            <button type="submit">Konfirmasi</button>
+        </form>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
